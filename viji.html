@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorry 💌</title>
-
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -16,27 +22,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
       color: #fff;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: 20px;
     }
 
     .page {
       max-width: 600px;
-      width: 100%;        
-      min-height: 80vh;   
-      padding: 25px;
+      width: 100%;
+      min-height: 70vh;
+      padding: 30px 25px;
       background: rgba(255, 255, 255, 0.15);
       border-radius: 25px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.25);
       backdrop-filter: blur(12px);
       transition: opacity 0.8s ease, transform 0.8s ease;
-      display: none; /* hide by default */
+      display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-sizing: border-box;
+      margin: 15px auto;
       animation: fadeIn 1s ease;
     }
 
@@ -47,10 +54,11 @@
     h1, h2 {
       margin-bottom: 20px;
       line-height: 1.3;
+      word-wrap: break-word;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
 
     h2 {
@@ -60,25 +68,27 @@
 
     p {
       margin: 10px 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
     }
 
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     button {
-      padding: 12px 32px;
+      padding: 12px 28px;
       border: none;
       border-radius: 35px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
       font-family: 'Roboto Slab', serif;
       transition: transform 0.25s, box-shadow 0.25s;
+      min-width: 120px;
     }
 
     .yes-btn {
@@ -97,6 +107,8 @@
       transform: translateY(-4px) scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
+
+    /* Note Page Styling */
     .note-page {
       font-family: 'Roboto Slab', serif;
       font-size: 1.1rem;
@@ -104,12 +116,14 @@
       color: #444;
       background: #fff;
       overflow-y: auto;
+      padding: 30px 25px;
     }
 
     .note-page h2 {
       font-family: 'Dancing Script', cursive;
       font-size: 2.5rem;
       color: #e75480;
+      margin-bottom: 20px;
     }
 
     .note-text {
@@ -117,39 +131,52 @@
       animation: fadeIn 2s ease;
     }
 
-    /* No Page Styling */
+    /* No Pages Styling */
     .no-page, .final-no-page {
       background: linear-gradient(135deg, #667db6, #0082c8, #667db6);
       color: #fff;
       text-align: center;
+      padding: 25px;
     }
 
     .sad-gif {
-      width: 220px;
+      width: 100%;
+      max-width: 250px;
       border-radius: 15px;
       margin-bottom: 20px;
     }
 
+    /* FadeIn Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.8rem; }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 2rem; }
       p { font-size: 1rem; }
-      button {
-        font-size: 1rem;
-        padding: 10px 24px;
-      }
+      button { font-size: 0.95rem; padding: 10px 22px; }
+      .page { padding: 25px 20px; }
+      .note-page { padding: 25px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.6rem; }
+      p { font-size: 0.95rem; }
+      button { font-size: 0.9rem; padding: 8px 18px; }
+      .page { padding: 20px 15px; min-height: 65vh; }
+      .note-page { padding: 20px 15px; }
     }
   </style>
 </head>
 <body>
+  <!-- First Page -->
   <div class="page active" id="main-page">
     <div class="tenor-gif-embed" data-postid="12693270328745133509" data-share-method="host" data-aspect-ratio="1" data-width="100%">
-      <a href="https://tenor.com/view/love-gif-12693270328745133509">Love Sticker</a>from 
+      <a href="https://tenor.com/view/love-gif-12693270328745133509">Love Sticker</a> from 
       <a href="https://tenor.com/search/love-stickers">Love Stickers</a>
     </div>
     
@@ -161,10 +188,11 @@
     </div>
   </div>
 
+  <!-- Yes Page -->
   <div class="page note-page" id="note-page">
-    <h2>Thanks for accepting the apology</h2>
+    <h2>Mannippaya?</h2>
     <p class="note-text">
-      Nan panadhu thappu nu enaku teriyum. po nu sonadhum space kodukuren nu ponadhu, hema and priya ta pesa sonadhu ellame my mistake thaan, i regret that and i accept my fault completely. Inime idhelam nadakama pathukuren and nan inime emotional ah decide panni una hurt panama, yosichu ella decision uhm edukuren.
+      Nan panadhu thappu nu enaku teriyum. Po nu sonadhum, space kodukuren nu ponadhu, hema and priya ta pesa sonadhu ellame my mistake thaan. I regret that and I accept my fault completely. Inime idhelam nadakama pathukuren and nan inime emotional ah decide panni una hurt panama, yosichu ella decision uhm edukuren.
 
       Thank you for forgiving me (even if it felt forced 😜) ❤️  
       I promise these situations won’t repeat.  
@@ -172,10 +200,10 @@
     </p>
   </div>
 
-  <!-- No Page (First No) -->
+  <!-- No Page -->
   <div class="page no-page" id="no-page">
     <div class="tenor-gif-embed" data-postid="17026660357779972539" data-share-method="host" data-aspect-ratio="1" data-width="100%">
-      <a href="https://tenor.com/view/imsorry-sorry-forgive-apology-gif-gif-17026660357779972539">Imsorry Forgive Sticker</a>from 
+      <a href="https://tenor.com/view/imsorry-sorry-forgive-apology-gif-gif-17026660357779972539">Imsorry Forgive Sticker</a> from 
       <a href="https://tenor.com/search/imsorry-stickers">Imsorry Stickers</a>
     </div>
 
@@ -192,6 +220,7 @@
     </div>
   </div>
 
+  <!-- Final No Page -->
   <div class="page final-no-page" id="final-no-page">
     <h2>💔 Okay... I understand...</h2>
     <p>I won’t disturb you anymore...  
@@ -203,7 +232,7 @@
     </div>
   </div>
 
-  <!-- Tenor Script (only once) -->
+  <!-- Tenor Script -->
   <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
   <script>
